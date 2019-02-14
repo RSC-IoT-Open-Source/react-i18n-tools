@@ -1,0 +1,19 @@
+{
+  "name": "react-i18n-tools",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "react-i18n": "bin/cli.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.1",
+    "react-native": "^0.58.4",
+    "uuid": "^3.3.2"
+  }
+}
