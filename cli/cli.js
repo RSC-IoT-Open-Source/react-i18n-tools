@@ -14,6 +14,7 @@ const componentFiles = getComponentFiles(rootComponentDirectory)
 const tags = Array.from(extractTags(componentFiles, localeFiles))
 
 validateTrextTagIdsAreUnique(tags)
+// TODO: Validate all Tag IDs exist in the files.
 insertNewTrextTagIds(tags)
 
 for (let localeFile of localeFiles) {

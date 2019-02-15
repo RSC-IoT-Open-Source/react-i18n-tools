@@ -1,6 +1,8 @@
 const React = require('react')
 const TrextContext = require('./TrextContext')
 
+// TODO: Add debug mode. Will highlight text that is within a Trext tag for spotting text that is not translatable.
+
 module.exports = ({ locale = undefined, translations = {}, children }) => {
 
   if (translations[locale] === undefined) {
