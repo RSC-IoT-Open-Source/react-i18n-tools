@@ -13,11 +13,14 @@ module.exports = ({ Text, style, id, children }) => {
             TrextContext.Consumer,
             {},
             ({ translations, locale }) => {
-
-                if (translations[locale] === undefined) {
+                if (translations[locale] === undefined || translations[locale].translated === undefined || translations[locale].translated[id] === undefined) {
                     return React.createElement(TextComponent, { style: style }, children)
                 }
-                return React.createElement(TextComponent, { style: style }, translations[locale][id].translation)
+                return React.createElement(
+                    TextComponent,
+                    { style: style },
+                    translations[locale].translated[id].translated
+                )
             }
         )
     }
