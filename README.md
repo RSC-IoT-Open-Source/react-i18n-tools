@@ -20,6 +20,15 @@ Then create a `.i18nconfig` file in the root of the project you would like to in
 }
 ```
 
+Initialize the Translated Text (`<Trext />`) component by passing it a component to wrap text with.
+
+```
+import { Text } from 'react-native'
+import { Trext } from 'react-i18n-tools'
+
+Trext({ Text: Text })
+```
+
 At the top level of your component tree (e.g., your `App.js`) add the `<TrextProvider />` and pass it the current locale, as well as a mapping to your translations. For example,
 
 ```
