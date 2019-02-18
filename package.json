@@ -1,6 +1,6 @@
 {
   "name": "react-i18n-tools",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "",
   "bin": {
     "react-i18n": "bin/cli.js"
@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.1",
-    "react-native": "^0.58.4",
     "uuid": "^3.3.2"
   }
 }

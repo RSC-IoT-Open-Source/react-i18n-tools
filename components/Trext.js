@@ -1,19 +1,24 @@
 const React = require('react')
-const { Text } = require('react-native')
 const TrextContext = require('./TrextContext')
 
-// TODO: If passed a style object, pass the object down to the <Text /> component.
+let TextComponent = undefined
 
-module.exports = ({ id, children }) => {
-  return React.createElement(
-      TrextContext.Consumer,
-      {},
-      ({ translations, locale }) => {
+module.exports = ({ Text, style, id, children }) => {
+    if (TextComponent === undefined && Text === undefined) {
+        throw new Error('You must initialize Trext with a Component to wrap text in. In React Native this is a Text component.')
+    } else if (TextComponent === undefined && Text !== undefined) {
+        TextComponent = Text
+    } else {
+        return React.createElement(
+            TrextContext.Consumer,
+            {},
+            ({ translations, locale }) => {
 
-          if (translations[locale] === undefined) {
-            return React.createElement(Text, {}, children)
-          }
-          return React.createElement(Text, {}, translations[locale][id].translation)
-      }
-  )
+                if (translations[locale] === undefined) {
+                    return React.createElement(TextComponent, { style: style }, children)
+                }
+                return React.createElement(TextComponent, { style: style }, translations[locale][id].translation)
+            }
+        )
+    }
 }
