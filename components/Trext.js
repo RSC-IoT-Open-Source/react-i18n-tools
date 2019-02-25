@@ -26,5 +26,5 @@ module.exports = ({ Text, style, id, children }) => {
   }
 }
 const applyNewLines = (text) => {
-  return text.split('[\n]').replace('\n')
+  return text.split('[\n]').join('\n')
 }
